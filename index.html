@@ -72,7 +72,7 @@
     clip-path: polygon(var(--c) 0, calc(100% - var(--c)) 0, 100% var(--c), 100% calc(100% - var(--c)), calc(100% - var(--c)) 100%, var(--c) 100%, 0 calc(100% - var(--c)), 0 var(--c)); }
   .frame > * { display: block; width: 100%; max-width: 100%; height: auto; background: var(--night-raised);
     clip-path: polygon(var(--c) 0, calc(100% - var(--c)) 0, 100% var(--c), 100% calc(100% - var(--c)), calc(100% - var(--c)) 100%, var(--c) 100%, 0 calc(100% - var(--c)), 0 var(--c)); }
-  .frame img, .frame video { aspect-ratio: 16 / 9; object-fit: cover; }
+  .frame img, .frame video, .frame iframe { aspect-ratio: 16 / 9; object-fit: cover; border: 0; }
 
   /* hero */
   .hero { display: grid; gap: 22px; }
@@ -143,19 +143,17 @@
       <li><strong>Open to remote</strong>, full-time or contract</li>
     </ul>
     <div class="actions">
-      <a class="btn primary" href="#reel">Watch the reel</a>
+      <a class="btn primary" href="#trailer">Watch the trailer</a>
       <a class="btn" href="https://tairoyzone.itch.io/" target="_blank" rel="noopener">Play my games</a>
       <a class="btn" href="#contact">Contact</a>
     </div>
   </header>
 
-  <figure class="reel" id="reel" style="margin:0">
-    <div class="frame"><video controls playsinline preload="metadata" poster="media/reel_poster.jpg" aria-label="Gameplay reel">
-      <source src="media/reel.mp4" type="video/mp4">
-    </video></div>
+  <figure class="reel" id="trailer" style="margin:0">
+    <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/kN5Da2w4TXs?rel=0" title="Shivaliva - Wishlist Trailer (Alpha)" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
     <figcaption>
-      <span class="meta">Gameplay reel &middot; 83 s &middot; Shivaliva, then Queen's Vanguard</span>
-      <span class="meta">Silent &middot; every shot labelled</span>
+      <span class="meta">Shivaliva wishlist trailer &middot; 1 min &middot; alpha footage</span>
+      <a class="meta" href="https://youtu.be/kN5Da2w4TXs" target="_blank" rel="noopener">Watch on YouTube</a>
     </figcaption>
   </figure>
 
