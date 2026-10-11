@@ -3,305 +3,292 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Christian Troy Pepito - game developer and designer (Godot). Shivaliva, Queen's Vanguard, Iron Overdrive, Shivaliva Zero and Glidy Icarus.">
-<title>Christian Troy Pepito</title>
+<title>Christian Troy Pepito, game developer and designer</title>
+<meta name="description" content="Christian Troy Pepito, game developer and designer (Godot). Shivaliva, Queen's Vanguard, Iron Overdrive, Shivaliva Zero and Glidy Icarus.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://portfolio.shivalivaleveling.com/">
+<meta property="og:title" content="Christian Troy Pepito, game developer and designer">
+<meta property="og:description" content="I make games and I finish them. Five are out on itch.io, and the biggest, Shivaliva, has a public alpha and a Steam page on the way.">
+<meta property="og:image" content="https://portfolio.shivalivaleveling.com/assets/social_card.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Christian Troy Pepito, game developer and designer, beside a floating island from his game Shivaliva">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:creator" content="@trojanatoplat">
+<meta name="twitter:image" content="https://portfolio.shivalivaleveling.com/assets/social_card.jpg">
+<meta name="theme-color" content="#F8F5EE">
+<link rel="canonical" href="https://portfolio.shivalivaleveling.com/">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;600&family=Source+Sans+3:wght@400;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@600;700&family=Source+Sans+3:ital,wght@0,400;0,600;1,400&display=swap">
+<link rel="stylesheet" href="assets/site.css">
 <style>
-  /* Layout: a game's pause menu for a career - one left-aligned column on the Stardust night, the reel and every picture
-     held in Shivaliva's own window frame (cut 45-degree corners, a cream hairline), a blue gem marking where you are. */
-  :root {
-    --night: #070b18;
-    --night-raised: #0e1530;
-    --cream: #efe7d8;
-    --chalk: #c6bda8;
-    --hairline: rgba(198, 189, 168, 0.38);
-    --gem: #5ca3fa;
-    --gem-deep: #265cc4;
-    --font-display: "Josefin Sans", "Futura", "Century Gothic", "Trebuchet MS", sans-serif;
-    --font-body: "Source Sans 3", "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-    --font-mono: "IBM Plex Mono", "Consolas", "SFMono-Regular", monospace;
-    --cut: 14px;
-    color-scheme: dark;
-  }
-  * { box-sizing: border-box; }
-  html { scroll-behavior: smooth; }
-  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
-  body {
-    margin: 0;
-    background-color: var(--night);
-    background-image:
-      radial-gradient(1px 1px at 12% 18%, rgba(255,255,255,.75), transparent 60%),
-      radial-gradient(1px 1px at 63% 7%, rgba(205,226,255,.7), transparent 60%),
-      radial-gradient(1.5px 1.5px at 81% 41%, rgba(255,255,255,.6), transparent 60%),
-      radial-gradient(1px 1px at 36% 66%, rgba(150,196,255,.65), transparent 60%),
-      radial-gradient(1px 1px at 91% 88%, rgba(239,231,216,.6), transparent 60%),
-      radial-gradient(1.5px 1.5px at 23% 92%, rgba(205,226,255,.55), transparent 60%),
-      radial-gradient(ellipse 70% 50% at 50% 0%, rgba(38, 92, 196, .22), transparent 70%);
-    background-size: 520px 520px, 520px 520px, 520px 520px, 520px 520px, 520px 520px, 520px 520px, 100% 100%;
-    background-attachment: fixed;
-    color: var(--cream);
-    font: 400 1.0625rem/1.6 var(--font-body);
-  }
-  .page { max-width: 1080px; margin: 0 auto; padding-inline: 20px; padding-block: 56px 40px; display: grid; gap: 88px; }
-  a { color: var(--cream); text-decoration-color: var(--gem); text-underline-offset: 3px; }
-  a:hover { color: #fff; }
-  a:focus-visible, button:focus-visible { outline: 2px solid var(--gem); outline-offset: 3px; }
+/* ---- the portfolio's own layout; the shared language (paper, ink, the blue gem, cut corners) is assets/site.css,
+        the same file Shivaliva's site uses, so the two read as one family ---- */
+.brand .gem { --s: 12px; margin-right: 4px; }
+.brand span { letter-spacing: 0.12em; }
+@media (max-width: 560px) { .brand span { display: none; } }
 
-  /* the game's voice: spaced caps between hairlines, a gem for "you are here" */
-  .eyebrow {
-    font: 600 0.8rem/1.2 var(--font-display); letter-spacing: 0.32em; text-transform: uppercase; color: var(--chalk);
-    display: flex; align-items: center; gap: 12px; margin: 0;
-  }
-  .gem { width: 11px; height: 11px; flex: none; transform: rotate(45deg);
-    background: linear-gradient(135deg, #a8ceff 0%, var(--gem) 45%, var(--gem-deep) 100%);
-    box-shadow: 0 0 10px rgba(92, 163, 250, .55); }
-  h1, h2, h3 { font-family: var(--font-display); font-weight: 600; text-wrap: balance; margin: 0; }
-  h1 { font-size: clamp(2.3rem, 6vw, 4.4rem); line-height: 1.02; letter-spacing: 0.06em; text-transform: uppercase; }
-  h2 { font-size: clamp(1.6rem, 3.4vw, 2.3rem); letter-spacing: 0.08em; text-transform: uppercase; }
-  h3 { font-size: 1.15rem; letter-spacing: 0.1em; text-transform: uppercase; }
-  .lead { font-size: 1.25rem; line-height: 1.55; color: var(--cream); max-width: 62ch; margin: 0; }
-  p { margin: 0; max-width: 65ch; }
-  .muted { color: var(--chalk); }
-  .meta { font: 400 0.78rem/1.5 var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--chalk); margin: 0; }
-  .rule { height: 1px; background: linear-gradient(90deg, var(--hairline), transparent); border: 0; margin: 0; }
+.hero { position: relative; isolation: isolate; padding: clamp(28px, 5vw, 72px) 0 clamp(56px, 8vw, 104px); }
+.hero::before { content: ""; position: absolute; z-index: -1; inset: 0 0 20% 0; background: radial-gradient(1000px 520px at 80% 0%, #E2EDF9 0%, rgba(226, 237, 249, 0) 72%); }
+.hero-grid { display: grid; gap: clamp(36px, 5vw, 64px); align-items: center; }
+@media (min-width: 1000px) { .hero-grid { grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr); } }
+/* the trademark: the blue gem marking the line that says who this is */
+.eyebrow { display: flex; align-items: center; gap: 12px; font: 700 0.8rem/1.2 var(--font-display); letter-spacing: 0.24em; text-transform: uppercase; color: var(--gem); }
+.eyebrow .gem { --s: 12px; }
+/* two lines at most on any width: balance splits the name evenly instead of stranding a word */
+h1 { margin-top: 18px; font-size: clamp(2.3rem, 4.9vw, 3.9rem); line-height: 1.02; letter-spacing: 0.03em; text-transform: uppercase; text-wrap: balance; }
+.hero .lead { margin-top: 22px; }
+.hero .facts { margin-top: 22px; }
+.hero .btn-row { margin-top: 28px; }
+.hero-media .frame { --c: 18px; }
+.hero-media .note { margin-top: 14px; display: flex; flex-wrap: wrap; align-items: center; gap: 8px 18px; font-size: 0.95rem; color: var(--ink-3); }
+.hero-media .float { position: absolute; z-index: 3; top: -14px; right: -10px; --s: 26px; animation: float 6s ease-in-out infinite; filter: drop-shadow(0 8px 10px rgba(0, 83, 154, 0.25)); }
+.hero-media { position: relative; }
+@keyframes float { 0%, 100% { transform: rotate(45deg) translate(0, 0); } 50% { transform: rotate(45deg) translate(-5px, -5px); } }
+.js .hero .rise { opacity: 0; transform: translateY(16px); animation: rise 0.9s var(--ease-out) forwards; animation-delay: calc(var(--d, 0) * 1ms); }
+@keyframes rise { to { opacity: 1; transform: none; } }
 
-  /* Shivaliva's window frame: a hairline that follows the cut corners */
-  .frame { --c: var(--cut); padding: 1px; background: var(--hairline);
-    clip-path: polygon(var(--c) 0, calc(100% - var(--c)) 0, 100% var(--c), 100% calc(100% - var(--c)), calc(100% - var(--c)) 100%, var(--c) 100%, 0 calc(100% - var(--c)), 0 var(--c)); }
-  .frame > * { display: block; width: 100%; max-width: 100%; height: auto; background: var(--night-raised);
-    clip-path: polygon(var(--c) 0, calc(100% - var(--c)) 0, 100% var(--c), 100% calc(100% - var(--c)), calc(100% - var(--c)) 100%, var(--c) 100%, 0 calc(100% - var(--c)), 0 var(--c)); }
-  .frame img, .frame video, .frame iframe { aspect-ratio: 16 / 9; object-fit: cover; border: 0; }
+/* Shivaliva: its own logo heads the section */
+.logo-title { margin: 0; line-height: 0; }
+.logo-title img { width: min(100%, 420px); height: auto; }
+.meta { color: var(--ink-3); font-size: 0.97rem; }
+.two { display: grid; gap: clamp(28px, 4vw, 56px); align-items: start; margin-top: clamp(28px, 4vw, 44px); }
+@media (min-width: 940px) { .two { grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); } }
+.two .copy { display: grid; gap: 22px; }
+.two .copy > p { color: var(--ink-2); font-size: 1.1rem; }
+.systems { display: grid; gap: 18px; }
+.systems li { display: grid; grid-template-columns: 18px minmax(0, 1fr); gap: 12px; }
+.systems .gem { --s: 10px; margin-top: 8px; }
+.systems b { display: block; font: 700 1.02rem/1.35 var(--font-display); color: var(--ink); margin-bottom: 2px; }
+.systems span span { color: var(--ink-2); }
+.shots { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
+.shots .frame { --c: 9px; }
+.built { --c: 14px; margin-top: clamp(32px, 4vw, 48px); padding: 26px 28px; background: var(--white); display: grid; gap: 10px; }
+.built p { color: var(--ink-2); max-width: 80ch; }
 
-  /* hero */
-  .hero { display: grid; gap: 22px; }
-  .facts { display: flex; flex-wrap: wrap; gap: 8px 22px; padding: 0; margin: 4px 0 0; list-style: none; }
-  .facts li { font: 500 0.8rem/1.4 var(--font-mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--chalk); }
-  .facts li strong { color: var(--cream); font-weight: 500; }
-  .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 6px; }
-  .btn { --c: 9px; display: inline-flex; align-items: center; gap: 10px; padding: 12px 20px;
-    font: 600 0.82rem/1 var(--font-display); letter-spacing: 0.2em; text-transform: uppercase; text-decoration: none;
-    color: var(--cream); background: var(--night-raised); border: 0; cursor: pointer;
-    clip-path: polygon(var(--c) 0, calc(100% - var(--c)) 0, 100% var(--c), 100% calc(100% - var(--c)), calc(100% - var(--c)) 100%, var(--c) 100%, 0 calc(100% - var(--c)), 0 var(--c));
-    box-shadow: inset 0 0 0 1px var(--hairline); }
-  .btn.primary { background: linear-gradient(180deg, #3b7fe0, var(--gem-deep)); color: #fff; box-shadow: none; }
-  .btn:hover { filter: brightness(1.12); }
+/* the other games and the apps */
+.cards { display: grid; gap: 40px 28px; }
+@media (min-width: 760px) { .cards { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+.card { display: grid; gap: 12px; align-content: start; }
+.card .frame { --c: 12px; transition: transform 0.45s var(--ease-out); }
+.card .frame img { transition: transform 0.8s var(--ease-out); }
+.card:hover .frame { transform: translateY(-4px); }
+.card:hover .frame img { transform: scale(1.035); }
+.card h3 { font-size: 1.35rem; margin-top: 4px; }
+.card h3 a { color: var(--ink); }
+.card h3 a:hover { color: var(--gem); }
+.card .meta { font-size: 0.92rem; }
+.card p:not(.meta) { color: var(--ink-2); }
 
-  /* the reel */
-  .reel { display: grid; gap: 14px; }
-  .reel figcaption { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 8px 20px; }
+/* about */
+.about { display: grid; gap: clamp(28px, 4vw, 56px); }
+@media (min-width: 900px) { .about { grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr); } }
+.about .prose { font-size: 1.1rem; }
+.skills { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 20px; align-content: start; }
+.skills li { display: flex; align-items: center; gap: 10px; color: var(--ink-2); }
+.skills .gem { --s: 7px; }
 
-  /* sections */
-  section { display: grid; gap: 26px; }
-  .section-head { display: grid; gap: 12px; }
-  .two { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr); gap: 36px; align-items: start; }
-  .systems { list-style: none; padding: 0; margin: 0; display: grid; gap: 16px; }
-  .systems li { display: grid; grid-template-columns: 18px minmax(0, 1fr); gap: 12px; align-items: start; }
-  .systems .gem { margin-top: 7px; width: 9px; height: 9px; }
-  .systems b { font-family: var(--font-display); font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.9rem; display: block; }
-  .shots { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; }
-  .shots .frame { --c: 10px; }
-  .built { --c: 12px; }
-  .built > div { padding: 22px 24px; display: grid; gap: 10px; }
-
-  .games { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 28px 24px; }
-  .game { display: grid; gap: 12px; align-content: start; }
-  .game .frame { --c: 10px; }
-  .game h3 a { text-decoration: none; }
-  .game h3 a:hover { text-decoration: underline; text-decoration-color: var(--gem); }
-
-  .chips { display: flex; flex-wrap: wrap; gap: 8px; padding: 0; margin: 0; list-style: none; }
-  .chips li { --c: 6px; font: 500 0.78rem/1 var(--font-mono); letter-spacing: 0.04em; padding: 8px 11px; color: var(--cream);
-    background: var(--night-raised); box-shadow: inset 0 0 0 1px var(--hairline);
-    clip-path: polygon(var(--c) 0, calc(100% - var(--c)) 0, 100% var(--c), 100% calc(100% - var(--c)), calc(100% - var(--c)) 100%, var(--c) 100%, 0 calc(100% - var(--c)), 0 var(--c)); }
-
-  .contact { display: grid; gap: 18px; }
-  .email-row { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
-  .email { font: 500 clamp(1.15rem, 3.2vw, 1.6rem)/1.2 var(--font-mono); color: var(--cream); user-select: all; overflow-wrap: anywhere; }
-  .links { display: flex; flex-wrap: wrap; gap: 10px 26px; padding: 0; margin: 0; list-style: none; }
-  .links a { font: 600 0.85rem/1.4 var(--font-display); letter-spacing: 0.16em; text-transform: uppercase; }
-  footer { border-top: 1px solid var(--hairline); padding-top: 22px; }
-
-  @media (max-width: 760px) {
-    .page { gap: 64px; padding-block: 36px 32px; padding-inline: 16px; }
-    .two, .games { grid-template-columns: minmax(0, 1fr); }
-  }
+/* contact */
+.contact { text-align: center; background: linear-gradient(180deg, var(--mist) 0%, var(--paper) 100%); }
+.contact .wrap { display: grid; justify-items: center; gap: 22px; }
+.contact h2 { font-size: clamp(2.2rem, 4.6vw, 3.6rem); }
+.email { font: 700 clamp(1.3rem, 3.4vw, 2rem)/1.2 var(--font-display); color: var(--ink); letter-spacing: 0.02em; overflow-wrap: anywhere; }
+.links { display: flex; flex-wrap: wrap; justify-content: center; gap: 4px 26px; }
+.links a { display: inline-flex; align-items: center; min-height: 44px; font: 700 0.82rem/1 var(--font-display); letter-spacing: 0.16em; text-transform: uppercase; }
 </style>
 </head>
 <body>
-<main class="page">
+<a class="skip" href="#main">Skip to the content</a>
 
-  <header class="hero">
-    <p class="eyebrow"><span class="gem" aria-hidden="true"></span>Game developer &amp; designer &middot; Godot</p>
-    <h1>Christian Troy Pepito</h1>
-    <p class="lead">I make games and I finish them. Five are out on itch.io, and the biggest, <em>Shivaliva</em>, is a 3D life-sim adventure with a public alpha and a Steam page on the way.</p>
-    <ul class="facts" aria-label="At a glance">
-      <li><strong>5</strong> games released</li>
-      <li>Godot 4 &middot; GDScript</li>
-      <li>Abu Dhabi, UAE &middot; UTC+4</li>
-      <li><strong>Open to remote</strong>, full-time or contract</li>
-    </ul>
-    <div class="actions">
-      <a class="btn primary" href="#trailer">Watch the trailer</a>
-      <a class="btn" href="https://tairoyzone.itch.io/" target="_blank" rel="noopener">Play my games</a>
-      <a class="btn" href="#contact">Contact</a>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Christian Troy Pepito, back to the top"><span class="gem" aria-hidden="true"></span><span>Christian Troy Pepito</span></a>
+    <nav class="nav" id="nav" aria-label="Sections">
+      <a href="#shivaliva">Shivaliva</a>
+      <a href="#games">Games</a>
+      <a href="#apps">Apps and web</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="btn btn-gem" href="mailto:trojanato@gmail.com">Email me</a>
+    <button class="menu-btn" type="button" aria-expanded="false" aria-controls="nav" aria-label="Menu"><svg width="22" height="22" viewBox="0 0 22 22" aria-hidden="true" fill="currentColor"><rect class="l l1" x="3" y="5" width="16" height="2" rx="1"/><rect class="l l2" x="3" y="10" width="16" height="2" rx="1"/><rect class="l l3" x="3" y="15" width="16" height="2" rx="1"/></svg></button>
+  </div>
+</header>
+
+<main id="main">
+
+<section class="hero" id="top" aria-label="Introduction">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow rise" style="--d:0"><span class="gem" aria-hidden="true"></span>Game developer &amp; designer &middot; Godot</p>
+      <h1 class="rise" style="--d:100">Christian Troy Pepito</h1>
+      <p class="lead rise" style="--d:200">I make games and I finish them. Five are out on itch.io, and the biggest, <em>Shivaliva</em>, is a 3D life-sim adventure with a public alpha and a Steam page on the way.</p>
+      <ul class="facts rise" style="--d:300" aria-label="At a glance">
+        <li><b>5</b> games released</li>
+        <li>Godot 4, GDScript</li>
+        <li>Abu Dhabi, UAE (UTC+4)</li>
+        <li><b>Open to remote</b>, full-time or contract</li>
+      </ul>
+      <div class="btn-row rise" style="--d:400">
+        <a class="btn btn-gem" href="https://youtu.be/kN5Da2w4TXs" data-trailer><span class="gem" aria-hidden="true"></span>Watch the trailer</a>
+        <a class="btn" href="https://tairoyzone.itch.io/" target="_blank" rel="noopener">Play my games</a>
+      </div>
     </div>
-  </header>
+    <div class="hero-media rise" style="--d:250">
+      <span class="gem float" aria-hidden="true"></span>
+      <div class="frame lift"><div class="in">
+        <video data-loop autoplay muted loop playsinline preload="metadata" poster="assets/hero_sizzle_poster.jpg" width="1280" height="720" aria-label="Sixteen seconds of Shivaliva's trailer: the floating island, jobs that are puzzles, gold, a home, a ship, cards, friends, the stars, the gun deck, a sky battle and a puzzle duel"><source src="assets/hero_sizzle.mp4" type="video/mp4"></video>
+      </div></div>
+      <p class="note"><span>Shivaliva, my main project. From its wishlist trailer.</span><a href="https://youtu.be/kN5Da2w4TXs" target="_blank" rel="noopener">Watch on YouTube</a></p>
+    </div>
+  </div>
+</section>
 
-  <figure class="reel" id="trailer" style="margin:0">
-    <div class="frame"><iframe src="https://www.youtube-nocookie.com/embed/kN5Da2w4TXs?rel=0" title="Shivaliva - Wishlist Trailer (Alpha)" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe></div>
-    <figcaption>
-      <span class="meta">Shivaliva wishlist trailer &middot; 1 min &middot; alpha footage</span>
-      <a class="meta" href="https://youtu.be/kN5Da2w4TXs" target="_blank" rel="noopener">Watch on YouTube</a>
-    </figcaption>
-  </figure>
-
-  <section aria-labelledby="shivaliva">
-    <div class="section-head">
-      <p class="eyebrow"><span class="gem" aria-hidden="true"></span>Featured project</p>
-      <h2 id="shivaliva">Shivaliva</h2>
+<section id="shivaliva" class="mist" aria-label="Shivaliva">
+  <div class="wrap">
+    <div class="head reveal">
+      <h2 class="logo-title"><img src="assets/logo_clean_1200.png" srcset="assets/logo_clean_600.png 600w, assets/logo_clean_1200.png 1200w" sizes="420px" alt="Shivaliva" width="1200" height="280" loading="lazy"></h2>
       <p class="meta">Godot 4.7 &middot; Windows &middot; public alpha v2.0.5 on itch.io &middot; Steam page coming soon &middot; solo developer and director &middot; site and press kit: <a href="https://play.shivalivaleveling.com" target="_blank" rel="noopener">play.shivalivaleveling.com</a></p>
     </div>
     <div class="two">
-      <div style="display:grid;gap:22px;min-width:0">
+      <div class="copy reveal">
         <p>A space-faring social life sim in the spirit of <em>Yohoho! Puzzle Pirates</em>. Islanders keep their own routines, twelve mini-games pay out in coin, and the coin buys a house, clothes and a passage between the islands.</p>
-        <ul class="systems">
-          <li><span class="gem" aria-hidden="true"></span><span><b>Live conversation</b>Islanders answer free-text chat through a live LLM and remember you. Their voices are generated on the player's own machine. Affinity unlocks new interactions, up to hugs and holding hands.</span></li>
-          <li><span class="gem" aria-hidden="true"></span><span><b>Jobs and mini-games</b>Dish duty, mining, sailing, gunnery, carpentry, navigation, sparring and Texas Hold'em against AI opponents, all on one coin economy.</span></li>
-          <li><span class="gem" aria-hidden="true"></span><span><b>Build and dress</b>Buy a lot, raise a house and furnish it. A wardrobe with dyes.</span></li>
-          <li><span class="gem" aria-hidden="true"></span><span><b>The voyage</b>Sail between islands through the Stardust, with duties on board and raider battles.</span></li>
-          <li><span class="gem" aria-hidden="true"></span><span><b>The labyrinth</b>Puzzle-battle bouts against its beasts, ending in a boss fight.</span></li>
+        <ul class="systems" data-stagger>
+          <li><span class="gem" aria-hidden="true"></span><span><b>Live conversation</b><span>Islanders answer free-text chat through a live LLM and remember you. Their voices are generated on the player's own machine. Affinity unlocks new interactions, up to hugs and holding hands.</span></span></li>
+          <li><span class="gem" aria-hidden="true"></span><span><b>Jobs and mini-games</b><span>Dish duty, mining, sailing, gunnery, carpentry, navigation, sparring and Texas Hold'em against AI opponents, all on one coin economy.</span></span></li>
+          <li><span class="gem" aria-hidden="true"></span><span><b>Build and dress</b><span>Buy a lot, raise a house and furnish it. A wardrobe with dyes.</span></span></li>
+          <li><span class="gem" aria-hidden="true"></span><span><b>The voyage</b><span>Sail between islands through the Stardust, with duties on board and raider battles.</span></span></li>
+          <li><span class="gem" aria-hidden="true"></span><span><b>The labyrinth</b><span>Puzzle-battle bouts against its beasts, ending in a boss fight.</span></span></li>
         </ul>
       </div>
-      <div class="shots">
-        <div class="frame"><img src="media/shiv_islanders.jpg" alt="Shivaliva: walking into town" loading="lazy"></div>
-        <div class="frame"><img src="media/shiv_poker.jpg" alt="Shivaliva: Texas Hold'em on the custom card deck" loading="lazy"></div>
-        <div class="frame"><img src="media/shiv_battle.jpg" alt="Shivaliva: a ship battle against a raider" loading="lazy"></div>
-        <div class="frame"><img src="media/shiv_mining.jpg" alt="Shivaliva: the mining mini-game" loading="lazy"></div>
-        <div class="frame"><img src="media/shiv_navigation.jpg" alt="Shivaliva: the navigation chart puzzle" loading="lazy"></div>
-        <div class="frame"><img src="media/shiv_romance.jpg" alt="Shivaliva: two islanders walking hand in hand on the pier" loading="lazy"></div>
+      <div class="shots" data-stagger>
+        <div class="frame"><div class="in"><img src="media/shivaliva/islanders.jpg" alt="Shivaliva: the tavern of an evening, the islanders at their tables" width="960" height="540" loading="lazy"></div></div>
+        <div class="frame"><div class="in"><img src="media/shivaliva/poker.jpg" alt="Shivaliva: Texas Hold'em on the custom card deck" width="960" height="540" loading="lazy"></div></div>
+        <div class="frame"><div class="in"><img src="media/shivaliva/space-battle.jpg" alt="Shivaliva: a ship battle against a raider" width="960" height="540" loading="lazy"></div></div>
+        <div class="frame"><div class="in"><img src="media/shivaliva/mining.jpg" alt="Shivaliva: the mining mini-game" width="960" height="540" loading="lazy"></div></div>
+        <div class="frame"><div class="in"><img src="media/shivaliva/navigation.jpg" alt="Shivaliva: the navigation puzzle at the ship's wheel" width="960" height="540" loading="lazy"></div></div>
+        <div class="frame"><div class="in"><img src="media/shivaliva/romance.jpg" alt="Shivaliva: a courting moment in the tavern" width="960" height="540" loading="lazy"></div></div>
       </div>
     </div>
-    <div class="frame built"><div>
+    <div class="built cut reveal">
       <h3>How it's built</h3>
-      <p class="muted">Solo, with an AI-assisted workflow: I set the design and the quality bar, direct the code with Claude Code, and test every feature in the game. The core games are covered by automated test scenes and headless simulations. The playing-card deck ships with a checker that measures the gap between every element on all 52 faces.</p>
-    </div></div>
-  </section>
-
-  <section aria-labelledby="more">
-    <div class="section-head">
-      <p class="eyebrow"><span class="gem" aria-hidden="true"></span>Released and playable</p>
-      <h2 id="more">More games</h2>
+      <p>Solo, with an AI-assisted workflow: I set the design and the quality bar, direct the code with Claude Code, and test every feature in the game. The core games are covered by automated test scenes and headless simulations. The playing-card deck ships with a checker that measures the gap between every element on all 52 faces.</p>
     </div>
-    <div class="games">
-      <article class="game">
-        <div class="frame"><img src="media/qv_1.jpg" alt="Queen's Vanguard: chess-piece towers holding off a wave" loading="lazy"></div>
+  </div>
+</section>
+
+<section id="games" aria-labelledby="games-h">
+  <div class="wrap">
+    <div class="head reveal"><h2 id="games-h">More games I've shipped</h2></div>
+    <div class="cards" data-stagger>
+      <article class="card">
+        <div class="frame"><div class="in"><img src="media/qv_1.jpg" alt="Queen's Vanguard: chess-piece towers holding off a wave" loading="lazy"></div></div>
         <h3><a href="https://tairoyzone.itch.io/queen-vanguard" target="_blank" rel="noopener">Queen's Vanguard</a></h3>
         <p class="meta">Godot &middot; Windows &middot; prototype demo &middot; no generative AI</p>
-        <p class="muted">3D tower defence where the towers are chess pieces: pawns promote and kings castle. Shipped with a full Steam art set.</p>
+        <p>3D tower defence where the towers are chess pieces: pawns promote and kings castle. Shipped with a full Steam art set.</p>
       </article>
-      <article class="game">
-        <div class="frame"><img src="media/io_splash.jpg" alt="Iron Overdrive: title art" loading="lazy"></div>
+      <article class="card">
+        <div class="frame"><div class="in"><img src="media/io_splash.jpg" alt="Iron Overdrive: title art" loading="lazy"></div></div>
         <h3><a href="https://tairoyzone.itch.io/iron-overdrive" target="_blank" rel="noopener">Iron Overdrive</a></h3>
         <p class="meta">Godot &middot; Windows, Linux &middot; released</p>
-        <p class="muted">Action roguelite. Mr. Goboto and his pet fight off invaders with weapon drops, elemental upgrades, power-up choices and secret rooms.</p>
+        <p>Action roguelite. Mr. Goboto and his pet fight off invaders with weapon drops, elemental upgrades, power-up choices and secret rooms.</p>
       </article>
-      <article class="game">
-        <div class="frame"><img src="media/shivzero.jpg" alt="Shivaliva Zero: Shiva in a torch-lit cave with Rudraksha beads" loading="lazy"></div>
+      <article class="card">
+        <div class="frame"><div class="in"><img src="media/shivzero.jpg" alt="Shivaliva Zero: Shiva in a torch-lit cave with Rudraksha beads" loading="lazy"></div></div>
         <h3><a href="https://tairoyzone.itch.io/shivaliva-zero" target="_blank" rel="noopener">Shivaliva Zero</a></h3>
         <p class="meta">Godot &middot; Aseprite &middot; Windows &middot; released, free</p>
-        <p class="muted">Pixel-art platformer. Seven short levels, each under two minutes, collecting Rudraksha beads as Shiva.</p>
+        <p>Pixel-art platformer. Seven short levels, each under two minutes, collecting Rudraksha beads as Shiva.</p>
       </article>
-      <article class="game">
-        <div class="frame"><img src="media/glidy.jpg" alt="Glidy Icarus: Icarus gliding over the sea" loading="lazy"></div>
+      <article class="card">
+        <div class="frame"><div class="in"><img src="media/glidy.jpg" alt="Glidy Icarus: Icarus gliding over the sea" loading="lazy"></div></div>
         <h3><a href="https://tairoyzone.itch.io/glidy-icarus-zero" target="_blank" rel="noopener">Glidy Icarus</a></h3>
         <p class="meta">Godot &middot; HTML5 &middot; plays in the browser</p>
-        <p class="muted">One-button flight through Greek myth: hold to rise, let go to dive, restart instantly.</p>
+        <p>One-button flight through Greek myth: hold to rise, let go to dive, restart instantly.</p>
       </article>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section aria-labelledby="web">
-    <div class="section-head">
-      <p class="eyebrow"><span class="gem" aria-hidden="true"></span>Also shipped</p>
-      <h2 id="web">Apps and web</h2>
-    </div>
-    <div class="games">
-      <article class="game">
-        <div class="frame"><img src="media/app_leveling.jpg" alt="Shivaliva Leveling: the daily quests, a hunter profile and a dungeon run on a phone" loading="lazy"></div>
+<section id="apps" class="mist" aria-labelledby="apps-h">
+  <div class="wrap">
+    <div class="head reveal"><h2 id="apps-h">Apps and websites</h2></div>
+    <div class="cards" data-stagger>
+      <article class="card">
+        <div class="frame"><div class="in"><img src="media/app_leveling.jpg" alt="Shivaliva Leveling: the daily quests, a hunter profile and a dungeon run on a phone" loading="lazy"></div></div>
         <h3><a href="https://shivalivaleveling.com" target="_blank" rel="noopener">Shivaliva Leveling</a></h3>
         <p class="meta">shivalivaleveling.com &middot; Next.js &middot; React &middot; Postgres (Prisma, Neon) &middot; Clerk &middot; PWA</p>
-        <p class="muted">A self-improvement RPG, "rank up in real life": daily quests, multi-day dungeon runs with check-ins, ranks, achievements, a leaderboard and guilds. Push and email reminders, offline support and several languages, prepared for Google Play.</p>
+        <p>A self-improvement RPG, "rank up in real life": daily quests, multi-day dungeon runs with check-ins, ranks, achievements, a leaderboard and guilds. Push and email reminders, offline support and several languages, prepared for Google Play.</p>
       </article>
-      <article class="game">
-        <div class="frame"><img src="media/web_elnora.jpg" alt="Elnora Maison's front page: a model between red curtains, 'Made to your measure.'" loading="lazy"></div>
+      <article class="card">
+        <div class="frame"><div class="in"><img src="media/web_elnora.jpg" alt="Elnora Maison's front page: a model between red curtains, 'Made to your measure.'" loading="lazy"></div></div>
         <h3><a href="https://elnoramaison.ae" target="_blank" rel="noopener">Elnora Maison</a></h3>
         <p class="meta">elnoramaison.ae &middot; Next.js &middot; React &middot; Stripe &middot; Vercel</p>
-        <p class="muted">Online shop for an Abu Dhabi couture house: catalogue and product pages, Stripe checkout with a payment webhook, customer reviews, and a contact form that emails the house.</p>
+        <p>Online shop for an Abu Dhabi couture house: catalogue and product pages, Stripe checkout with a payment webhook, customer reviews, and a contact form that emails the house.</p>
       </article>
     </div>
-  </section>
+  </div>
+</section>
 
-  <section aria-labelledby="about">
-    <div class="section-head">
-      <p class="eyebrow"><span class="gem" aria-hidden="true"></span>About</p>
-      <h2 id="about">Who's behind them</h2>
+<section id="about" aria-labelledby="about-h">
+  <div class="wrap">
+    <div class="head reveal"><h2 id="about-h">About me</h2></div>
+    <div class="about">
+      <div class="prose reveal">
+        <p>By day I'm an IT programmer at a school in Abu Dhabi: I build its websites, support its teachers and make its learning materials. I studied Business Information Technology, and I build apps and sites too: <a href="https://shivalivaleveling.com" target="_blank" rel="noopener">Shivaliva Leveling</a>, a self-improvement RPG app; Elnora Maison's online shop; and Shivaliva's own website. Games are where everything else goes.</p>
+        <p>Looking for a remote, full-time role as a game or technical designer, a Godot developer, or in QA, production or community.</p>
+      </div>
+      <ul class="skills" aria-label="Skills" data-stagger>
+        <li><span class="gem" aria-hidden="true"></span>Godot 4, GDScript</li>
+        <li><span class="gem" aria-hidden="true"></span>Gameplay systems</li>
+        <li><span class="gem" aria-hidden="true"></span>Mini-game design</li>
+        <li><span class="gem" aria-hidden="true"></span>Economy &amp; progression</li>
+        <li><span class="gem" aria-hidden="true"></span>UI and UX</li>
+        <li><span class="gem" aria-hidden="true"></span>Aseprite</li>
+        <li><span class="gem" aria-hidden="true"></span>Trailers &amp; store pages</li>
+        <li><span class="gem" aria-hidden="true"></span>Next.js, React</li>
+        <li><span class="gem" aria-hidden="true"></span>PostgreSQL</li>
+        <li><span class="gem" aria-hidden="true"></span>Stripe</li>
+        <li><span class="gem" aria-hidden="true"></span>Git</li>
+        <li><span class="gem" aria-hidden="true"></span>AI-assisted development</li>
+      </ul>
     </div>
-    <p>By day I'm an IT programmer at a school in Abu Dhabi: I build its websites, support its teachers and make its learning materials. I studied Business Information Technology, and I build apps and sites too: <a href="https://shivalivaleveling.com" target="_blank" rel="noopener">Shivaliva Leveling</a>, a self-improvement RPG app; Elnora Maison's online shop; and Shivaliva's own website. Games are where everything else goes.</p>
-    <p class="muted">Looking for a remote, full-time role as a game or technical designer, a Godot developer, or in QA, production or community.</p>
-    <ul class="chips" aria-label="Skills">
-      <li>Godot 4</li><li>GDScript</li><li>Gameplay systems</li><li>Mini-game design</li><li>Economy &amp; progression</li>
-      <li>UI / UX</li><li>Aseprite</li><li>Trailers &amp; store pages</li><li>Next.js</li><li>React</li><li>PostgreSQL</li><li>Stripe</li><li>Git</li>
-      <li>AI-assisted development</li>
-    </ul>
-  </section>
+  </div>
+</section>
 
-  <section class="contact" id="contact" aria-labelledby="contact-h">
-    <div class="section-head">
-      <p class="eyebrow"><span class="gem" aria-hidden="true"></span>Contact</p>
-      <h2 id="contact-h">Let's talk</h2>
+<section id="contact" class="contact" aria-labelledby="contact-h">
+  <div class="wrap reveal">
+    <h2 id="contact-h">Contact</h2>
+    <p class="email" id="email">trojanato@gmail.com</p>
+    <div class="btn-row">
+      <a class="btn btn-gem" href="mailto:trojanato@gmail.com"><span class="gem" aria-hidden="true"></span>Send an email</a>
+      <button class="btn" type="button" data-copy="trojanato@gmail.com">Copy email</button>
     </div>
-    <div class="email-row">
-      <span class="email" id="email">trojanato@gmail.com</span>
-      <button class="btn" type="button" id="copy-email">Copy email</button>
-    </div>
-    <ul class="links">
-      <li><a href="https://tairoyzone.itch.io/" target="_blank" rel="noopener">itch.io</a></li>
-      <li><a href="https://www.linkedin.com/in/christian-troy-pepito-0930b9426/" target="_blank" rel="noopener">LinkedIn</a></li>
-      <li><a href="https://github.com/Crispian-Troyo369" target="_blank" rel="noopener">GitHub</a></li>
-      <li><a href="https://twitter.com/trojanatoplat" target="_blank" rel="noopener">X / Twitter</a></li>
-      <li><a href="https://play.shivalivaleveling.com" target="_blank" rel="noopener">Shivaliva site</a></li>
-    </ul>
-  </section>
+    <nav class="links" aria-label="Elsewhere">
+      <a href="https://tairoyzone.itch.io/" target="_blank" rel="noopener">itch.io</a>
+      <a href="https://www.linkedin.com/in/christian-troy-pepito-0930b9426/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/Crispian-Troyo369" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://twitter.com/trojanatoplat" target="_blank" rel="noopener">X / Twitter</a>
+      <a href="https://play.shivalivaleveling.com" target="_blank" rel="noopener">Shivaliva site</a>
+    </nav>
+  </div>
+</section>
 
-  <footer>
-    <p class="meta">&copy; 2026 Christian Troy Pepito &middot; framed in Shivaliva's own interface</p>
-  </footer>
 </main>
 
-<script>
-  (function () {
-    var btn = document.getElementById("copy-email");
-    var email = document.getElementById("email");
-    function selectEmail() {
-      var r = document.createRange();
-      r.selectNodeContents(email);
-      var s = window.getSelection();
-      s.removeAllRanges();
-      s.addRange(r);
-    }
-    btn.addEventListener("click", function () {
-      var text = email.textContent.trim();
-      var done = function () { btn.textContent = "Copied"; setTimeout(function () { btn.textContent = "Copy email"; }, 1800); };
-      if (navigator.clipboard && navigator.clipboard.writeText) {
-        navigator.clipboard.writeText(text).then(done, function () { selectEmail(); btn.textContent = "Press Ctrl+C"; });
-      } else {
-        selectEmail();
-        btn.textContent = "Press Ctrl+C";
-      }
-    });
-  })();
-</script>
+<footer class="foot">
+  <div class="wrap"><p>&copy; 2026 Christian Troy Pepito</p></div>
+</footer>
+
+<dialog class="overlay player" id="trailer" aria-label="Shivaliva, the wishlist trailer">
+  <button class="ctl x" type="button" aria-label="Close the trailer">&times;</button>
+  <figure>
+    <iframe data-src="https://www.youtube-nocookie.com/embed/kN5Da2w4TXs?autoplay=1&amp;rel=0" title="Shivaliva - Wishlist Trailer (Alpha)" allow="autoplay; encrypted-media; picture-in-picture; fullscreen" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+    <figcaption>Shivaliva, the wishlist trailer. One minute of alpha footage.</figcaption>
+  </figure>
+</dialog>
+
+<script src="assets/site.js" defer></script>
 </body>
 </html>
